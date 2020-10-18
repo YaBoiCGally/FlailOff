@@ -22,6 +22,21 @@ public class ConfigLoader {
         public Map<String, Double> physics;
         public Map<String, Character> controls;
         public Map<String, Boolean> powerUps;
+        
+        @Override
+        public String toString() {
+            String config = "";
+            for(Map.Entry<String,Double> entry : physics.entrySet()) {  
+                config += "Key = " + entry.getKey() + ", Value = " + entry.getValue() + "\n";
+            }
+            for(Map.Entry<String,Character> entry : controls.entrySet()) {  
+                config += "Key = " + entry.getKey() + ", Value = " + entry.getValue() + "\n";
+            }
+            for(Map.Entry<String,Boolean> entry : powerUps.entrySet()) {  
+                config += "Key = " + entry.getKey() + ", Value = " + entry.getValue() + "\n";
+            }
+            return null;
+        }
     }
     
     private Yaml yaml;
