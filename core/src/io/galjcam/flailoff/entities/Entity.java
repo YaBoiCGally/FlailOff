@@ -11,4 +11,7 @@ package io.galjcam.flailoff.entities;
  */
 public interface Entity {
     
+    public void move(int x, int y);
+    
+    public void bind(Entity e1);
 }
