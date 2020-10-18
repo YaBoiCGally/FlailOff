@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mygdx.game;
+package io.galjcam.flailoff.entities;
+
+import io.galjcam.flailoff.character.AbstractCharacter;
 
 /**
  *
  * @author Cam
  */
-public class ConfigLoader {
+public class Player extends AbstractCharacter {
     
 }
