@@ -14,4 +14,8 @@ public interface Entity {
     public void move(int x, int y);
     
     public void bind(Entity e1);
+    
+    public int getHealth();
+    
+    public void render();
 }

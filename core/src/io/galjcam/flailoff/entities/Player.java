@@ -11,6 +11,26 @@ import io.galjcam.flailoff.character.AbstractCharacter;
  *
  * @author Cam
  */
-public class Player extends AbstractCharacter {
+public class Player extends AbstractCharacter implements Entity {
+
+    @Override
+    public void move(int x, int y) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void bind(Entity e1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int getHealth() {
+        return 69;
+    }
+
+    @Override
+    public void render() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
