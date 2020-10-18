@@ -10,6 +10,11 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
+import com.badlogic.gdx.physics.box2d.World;
+import io.galjcam.flailoff.entities.*;
 
 /**
  *
@@ -17,9 +22,15 @@ import com.badlogic.gdx.graphics.GL20;
  */
 public class GameScreen extends ScreenAdapter {
     FlailOff game;
-    
+    World world;
+    OrthographicCamera camera;
+    Box2DDebugRenderer renderer;
+        
     public GameScreen(FlailOff game) {
         this.game = game;
+        this.world = new World(new Vector2(0, -10), true);
+        this.camera = new OrthographicCamera(852, 480);
+        this.renderer = new Box2DDebugRenderer();
     }
     
     @Override
@@ -39,12 +50,17 @@ public class GameScreen extends ScreenAdapter {
     public void render(float delta) {
         Gdx.gl.glClearColor(0, .25f, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        
         game.background.render(delta);
         game.batch.begin();
         game.font.draw(game.batch, "Game Screen!", Gdx.graphics.getWidth() * .25f, Gdx.graphics.getHeight() * .75f);
         game.font.draw(game.batch, "Click the circle to win.", Gdx.graphics.getWidth() * .25f, Gdx.graphics.getHeight() * .5f);
         game.font.draw(game.batch, "Press space to play.", Gdx.graphics.getWidth() * .25f, Gdx.graphics.getHeight() * .25f);
         game.batch.end();
+        
+        Entity ground = new GroundEntity(world, camera);
+        world.step(1 / 60f, 6, 2);
+        renderer.render(world, camera.combined);
     }
 
     @Override
