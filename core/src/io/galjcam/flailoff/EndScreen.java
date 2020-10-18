@@ -15,11 +15,15 @@ import com.badlogic.gdx.graphics.GL20;
  *
  * @author Adam Li
  */
-public class ControlHelpScreen extends ScreenAdapter {
+public class EndScreen extends ScreenAdapter {
     FlailOff game;
+    String winner;
     
-    public ControlHelpScreen(FlailOff game) {
+    public EndScreen(FlailOff game, String winner) {
+        game.player1.health = 100;
+        game.player2.health = 100;
         this.game = game;
+        this.winner = winner;
     }
     
     @Override
@@ -41,9 +45,9 @@ public class ControlHelpScreen extends ScreenAdapter {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         game.background.render(delta);
         game.batch.begin();
-        game.font.draw(game.batch, "Title Screen!", Gdx.graphics.getWidth() * .25f, Gdx.graphics.getHeight() * .75f);
-        game.font.draw(game.batch, "Click the circle to win.", Gdx.graphics.getWidth() * .25f, Gdx.graphics.getHeight() * .5f);
-        game.font.draw(game.batch, "Press space to play.", Gdx.graphics.getWidth() * .25f, Gdx.graphics.getHeight() * .25f);
+        game.font.draw(game.batch, "Player " + winner + " wins!", Gdx.graphics.getWidth() * .25f, Gdx.graphics.getHeight() * .75f);
+
+        game.font.draw(game.batch, "Press space to reset.", Gdx.graphics.getWidth() * .25f, Gdx.graphics.getHeight() * .25f);
         game.batch.end();
     }
 

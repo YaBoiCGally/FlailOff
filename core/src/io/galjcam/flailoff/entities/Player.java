@@ -13,6 +13,16 @@ import io.galjcam.flailoff.character.AbstractCharacter;
  */
 public class Player extends AbstractCharacter implements Entity {
 
+    public int health;
+    
+    public Player() {
+        this.health = 100;
+    }
+    
+    public void decrementHealth(int i) {
+        health -= i;
+    }
+    
     @Override
     public void move(int x, int y) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -25,7 +35,7 @@ public class Player extends AbstractCharacter implements Entity {
 
     @Override
     public int getHealth() {
-        return 69;
+        return health;
     }
 
     @Override

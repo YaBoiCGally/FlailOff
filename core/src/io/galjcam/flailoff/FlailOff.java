@@ -21,6 +21,8 @@ public class FlailOff extends Game {
     
     InfiniteBackground background;
     Status status;
+    Player player1;
+    Player player2;
 
     @Override
     public void create () {
@@ -33,8 +35,11 @@ public class FlailOff extends Game {
         
         this.camera = new OrthographicCamera(width, height);
         
-        background = new InfiniteBackground("background-clouds.png", width, height, new Vector2(5, 100));
-        status = new Status(new Player(), new Player(), width, height, new Vector2(width/2, height-50));
+        this.player1 = new Player();
+        this.player2 = new Player();
+        
+        this.background = new InfiniteBackground("background-clouds.png", width, height, new Vector2(5, 100));
+        this.status = new Status(player1, player2, width, height, new Vector2(width/2, height-50));
         setScreen(new MainScreen(this));
     }
     

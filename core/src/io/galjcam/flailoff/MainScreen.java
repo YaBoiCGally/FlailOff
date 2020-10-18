@@ -42,7 +42,7 @@ public class MainScreen extends ScreenAdapter {
         game.background.render(delta);
         game.batch.begin();
         game.font.draw(game.batch, "Title Screen!", Gdx.graphics.getWidth() * .25f, Gdx.graphics.getHeight() * .75f);
-        game.font.draw(game.batch, "Click the circle to win.", Gdx.graphics.getWidth() * .25f, Gdx.graphics.getHeight() * .5f);
+        game.font.draw(game.batch, "Tap the keyboard faster to win! P1 = 'w', P2 = 'UP'", Gdx.graphics.getWidth() * .25f, Gdx.graphics.getHeight() * .5f);
         game.font.draw(game.batch, "Press space to play.", Gdx.graphics.getWidth() * .25f, Gdx.graphics.getHeight() * .25f);
         game.batch.end();
     }
