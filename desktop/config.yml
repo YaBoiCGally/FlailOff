@@ -1,0 +1,30 @@
+## YAML Template.
+---
+
+    physics:
+        backgroundScrollSpeed: 0.0
+        fallBackSpeed: 0.0
+        armRaiseSpeed: 0.0
+        legMoveSpeed: 0.0
+        jetPackForward: 0.0
+        jetPackLift: 0.0
+        jetPackTorque: 0.0
+        
+    controls:
+        p1LeftLeg: "a"
+        p1RightLeg: "d"
+        p1ArmRaise: "w"
+        p1JetPack: "s"
+        p1Special: "20"
+       
+        p2LeftLeg: 37
+        p2RightLeg: 39
+        p2ArmRaise: 38
+        p2JetPack: 40
+        p2Special: 27
+    
+    powerUps: 
+        jetPackBoost: true
+        armStrengthBoost: true
+        autoStabilizier: true
+    
